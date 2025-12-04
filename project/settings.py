@@ -28,6 +28,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# ALLOWED_HOSTS = [
+#     'seraperfume.up.railway.app',
+#      "127.0.0.1",
+#     "localhost",
+# ]
+
+# CSRF_TRUSTED_ORIGINS = [
+#     # "https://fiber-production-0802.up.railway.app",
+#     "https://seraperfume.up.railway.app",
+ 
+
+# ]
 
 # Application definition
 
