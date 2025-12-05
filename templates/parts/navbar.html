@@ -1,4 +1,4 @@
-{% comment %} {% load static %}
+{% load static %}
 <header id="header" class="header d-flex align-items-center">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
@@ -26,63 +26,4 @@
     </nav><!-- .navbar -->
 
   </div>
-</header><!-- End Header --> {% endcomment %}
-
-
-
-
-{% load static %}
-<header id="header" class="header d-flex align-items-center">
-  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-    <a href="/" class="logo d-flex align-items-center">
-      <!-- ✅ أضف اللوجو هنا -->
-      <img src="{% static 'assets/img/logo.png' %}" alt="Green Zag Logo" 
-           class="me-2" 
-           width="40" height="40" 
-           style="object-fit: contain;">
-      <h1>Green Zag<span>.</span></h1>
-    </a>
-
-    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-    <nav id="navbar" class="navbar">
-      <ul>
-        <li><a href="{% url 'home:home' %}" data-page="home">Home</a></li>
-        <li><a href="{% url 'about:about' %}" data-page="about">About</a></li>
-        <li><a href="" data-page="services">Services & Products</a></li>
-        <li><a href="" data-page="projects">Projects</a></li>
-        <li><a href="" data-page="partners">Partners</a></li>  <!-- ✅ صححت التهجئة -->
-        <li><a href="" data-page="news">News</a></li>
-        <li><a href="" data-page="contact">Contact</a></li>
-      </ul>
-    </nav><!-- .navbar -->
-
-  </div>
 </header><!-- End Header -->
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname;
-    const navLinks = document.querySelectorAll('#navbar a[data-page]');
-
-    // مسح الـ active من كل الروابط
-    navLinks.forEach(link => link.classList.remove('active'));
-
-    // جلب اسم الصفحة من الرابط (مثلاً: '/about/' -> 'about')
-    let targetPage = 'home'; // الافتراضي
-
-    if (currentPage.includes('about')) targetPage = 'about';
-    else if (currentPage.includes('services')) targetPage = 'services';
-    else if (currentPage.includes('projects')) targetPage = 'projects';
-    else if (currentPage.includes('partners')) targetPage = 'partners';
-    else if (currentPage.includes('news')) targetPage = 'news';
-    else if (currentPage.includes('contact')) targetPage = 'contact';
-
-    // إضافة active للرابط المناسب
-    const activeLink = document.querySelector(`#navbar a[data-page="${targetPage}"]`);
-    if (activeLink) {
-        activeLink.classList.add('active');
-    }
-});
-</script>
